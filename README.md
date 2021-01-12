@@ -1,23 +1,4 @@
-![retrospectify screenshot](https://blog.pepf.nl/media/2016/09/retrospectify.gif "Rertrospectify screenshot")
 
-# Retrospectify
-An awesome tool for doing agile team retrospectives digitally.
-This can be useful when doing retrospectives with remote teams or when you want to keep track of retrospective outcomes over time.
-
-## Features
-
-* Three types of notes
-* Moving around/prioritizing notes to your team's needs
-* Adding points to individual notes
-
-## Working on
- * Moving the code to the store
- * Timeboxing the meeting
-
-## Try it!
-[Live demo](http://pepf.nl/retrospective/)
-
-## Usage
 
 ### I just want to use the app!
 The quickest way is to use the live demo!
