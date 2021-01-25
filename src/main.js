@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 import VueDraggable from './directives/draggable'
+import './quasar'
 Vue.config.productionTip = false
 Vue.directive('draggable', VueDraggable)
 

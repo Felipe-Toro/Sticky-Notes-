@@ -10,5 +10,16 @@ module.exports = {
         'VERSION': JSON.stringify(version),
       })
     ]
-  }
+  },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'kebab',
+      rtlSupport: false
+    }
+  },
+
+  transpileDependencies: [
+    'quasar'
+  ]
 }

@@ -4,6 +4,8 @@
       <input class="board-title" v-model="board.title" />
     </p>
     <div class="notes">
+      <div class=""></div>
+
       <!-- <div class="empty-state" v-show="!board.notes.length">
         this is a very empty screen
       </div> -->

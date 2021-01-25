@@ -3,23 +3,24 @@
     <transition name="slide">
       <div class="sidebar" v-show="expanded">
         <p class="sidebar-menu">
-          <button
+          <!-- <button
             class="invert"
             v-on:click="saveBoards"
             title="Save board for later editing"
           >
             Save
-          </button>
-          <button
+          </button> -->
+
+          <!-- <button
             class="invert"
             v-on:click="exportBoard(activeBoardIndex)"
             title="Export board contents to file"
           >
             Export
-          </button>
-          <button class="invert small" v-on:click="clearBoard">
+          </button> -->
+          <!-- <button class="invert small" v-on:click="clearBoard">
             Clear the board
-          </button>
+          </button> -->
         </p>
         <h2>Saved boards</h2>
         <ul>
@@ -40,7 +41,7 @@
           </li>
         </ul>
         <button @click="createBoard">+ New</button>
-        <div class="about">Retrospectify V{{ version }}</div>
+        <!-- <div class="about">Retrospectify V{{ version }}</div> -->
       </div>
     </transition>
     <div class="sidebar-overlay" @click="toggle" v-show="expanded"></div>
@@ -77,15 +78,15 @@ export default {
     removeBoard(id) {
       bus.$emit("remove-board", id);
     },
-    clearBoard() {
-      bus.$emit("clear-board");
-    },
-    saveBoards() {
-      bus.$emit("save-boards");
-    },
-    exportBoard(id) {
-      bus.$emit("export-board", id);
-    },
+    // clearBoard() {
+    //   bus.$emit("clear-board");
+    // },
+    // saveBoards() {
+    //   bus.$emit("save-boards");
+    // },
+    // exportBoard(id) {
+    //   bus.$emit("export-board", id);
+    // },
     toggle() {
       this.expanded = !this.expanded;
     },
@@ -103,9 +104,9 @@ $sidebar-bg: $denim;
   top: 0;
   bottom: 0;
   position: absolute;
-  width: 300px;
-  background-color: $sidebar-bg;
-  color: $white;
+  width: 250px;
+  background-color: white;
+  color: $denim;
   right: 0;
   padding: 1em;
   z-index: 2000;

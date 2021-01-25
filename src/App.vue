@@ -4,22 +4,54 @@
       :boards="boards"
       :active-board-index="activeBoardIndex"
     ></saved-boards>
+
     <div class="board-content">
       <div class="main_menu">
-        <span class="heading">Notes<sup>™</sup></span>
+        <span color="primary" class="heading">Mural</span>
         <div class="note_actions">
-          <button @click="$refs.board.addNote('positive')">New note</button>
+          <q-list flat class="note_actions">
+            <q-btn
+              @click="$refs.board.addNote('positive')"
+              icon="note"
+              color="primary"
+              flat
+              size="lg"
+            />
+            <q-btn flat icon="add" color="primary" size="lg" />
+            <q-btn
+              v-on:click="exportBoard(activeBoardIndex)"
+              flat
+              icon="save_alt"
+              color="primary"
+              size="lg"
+            />
+          </q-list>
         </div>
-        <div class="board_actions">
-          <span class="subtle" :class="{ hidden: !unsavedChanges }"
-            >There are unsaved changes</span
+        <div>
+          <q-btn
+            v-on:click="clearBoard"
+            flat
+            color="primary"
+            size="lg"
+            icon="delete"
+          ></q-btn>
+          <q-btn
+            size="lg"
+            flat
+            color="primary"
+            icon="save"
+            v-on:click="saveBoards"
+            :disabled="!unsavedChanges"
+          ></q-btn>
+          <q-btn
+            flat
+            size="lg"
+            class="menu-toggle invert"
+            @click.stop="toggleSidebar"
+            color="primary"
+            icon="view_headline"
           >
-          <button v-on:click="saveBoards" :disabled="!unsavedChanges">
-            Save
-          </button>
-          <button class="menu-toggle invert" @click.stop="toggleSidebar">
-            ☰
-          </button>
+          </q-btn>
         </div>
       </div>
 
@@ -97,6 +129,12 @@ export default {
   },
 
   methods: {
+    clearBoard() {
+      bus.$emit("clear-board");
+    },
+    exportBoard(id) {
+      bus.$emit("export-board", id);
+    },
     resetActive() {
       bus.$emit("reset-active");
     },
